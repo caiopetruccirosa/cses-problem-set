@@ -9,26 +9,19 @@ int main() {_
     int n;
     cin >> n;
 
-    if (n % 2 == 0 || n < 5) {
-        cout << "NO SOLUTION\n";
-        return 0;
-    }
-
-    bool end = true;
-    vector<int> v(n, 0);
-    for (int i = 0; i < n; i++) {
-        if (end) {
-            v[n-1-i] = i+1;
-        } else {
-            v[i] = i+1;
+    if (n == 1) {
+        cout << 1;
+    } else if (n < 4) {
+        cout << "NO SOLUTION";
+    } else {
+        for (int i = 2; i <= n; i += 2) {
+            cout << i << ' ';
         }
-        end = !end;
-    }
-
-    for (int i = 0; i < n; i++) {
-        cout << v[i];
-        if (i < n-1) {
-            cout << ' ';
+        for (int i = 1; i <= n; i += 2) {
+            cout << i;
+            if (i <= n-2) {
+                cout << ' ';
+            }
         }
     }
     cout << '\n';
