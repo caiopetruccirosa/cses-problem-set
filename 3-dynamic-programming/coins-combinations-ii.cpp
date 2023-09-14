@@ -17,8 +17,8 @@ int main() {_
     }
 
     amount[0] = 1;
-    for (int i = 1; i <= x; i++) {
-        for (int c = 0; c < n; c++) {
+    for (int c = 0; c < n; c++) {
+        for (int i = 1; i <= x; i++) {
             if (coins[c] <= i) {
                 amount[i] = (amount[i] + amount[i-coins[c]]) % LIM;
             }
